@@ -23,7 +23,7 @@ class ViewController: UIViewController {
           game.choosecard(at: cardNumber)
           UpdateViewfromModel()
         
-          if cardNumber < 8 {
+          if cardNumber < 12 {
              // putimage(sender, emojichoices[cardNumber])
             }
         }else {
@@ -49,6 +49,7 @@ class ViewController: UIViewController {
     }
     
     var emojichoices = ["🎃","🍕","🍎","🌮", "🦀","🐧","🐅","🐷"]
+    
     
     // Dictionary - integer pointing to a string
     var emoji  = [Int:String]()
