@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConcentrationViewController: UIViewController {
     
    @IBOutlet var CardButtons: [UIButton]!
 
     lazy var game = Concentration(numberofpairofCards: (CardButtons.count+1)/2 )
-    //lazy cannot have didsetsµ
+    //lazy cannot have didset and it can not observe value changes
     
     
     @IBAction func TouchCard(_ sender: UIButton) {
@@ -30,6 +30,13 @@ class ViewController: UIViewController {
             print ("button is not in cardbuttons")
         }
        
+    }
+    
+    @IBAction func StartNewGame(_ sender: UIButton) {
+        flipcount = 0
+        emojichoices = ["🎃","🍕","🍎","🌮", "🦀","🐧","🐅","🐷"]
+        game = Concentration(numberofpairofCards: (CardButtons.count+1)/2 )
+        UpdateViewfromModel()
     }
     
     func UpdateViewfromModel () {
@@ -72,7 +79,8 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    // TODO: Play new game
+
     func putimage (_ button: UIButton, _ emoji : String) {
         flipcount += 1
         if  button.currentTitle == " " || button.currentTitle == nil {

@@ -54,6 +54,9 @@ class Concentration {
         }
         
         //TODO: Shuffle the cards
+        for k in stride(from: cards.count - 1, to: 0, by: -1) {
+            cards.swapAt(Int(arc4random_uniform(UInt32(k + 1))), k)
+        }
     }
     
 }
