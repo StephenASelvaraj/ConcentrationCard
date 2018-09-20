@@ -34,7 +34,7 @@ class ConcentrationViewController: UIViewController {
     
     @IBAction func StartNewGame(_ sender: UIButton) {
         flipcount = 0
-        emojichoices = ["🎃","🍕","🍎","🌮", "🦀","🐧","🐅","🐷"]
+        emojichoices = ["⚽️","⚾️","🎾","🏸", "🏏","🏓","⛳️","🏈"]
         game = Concentration(numberofpairofCards: (CardButtons.count+1)/2 )
         UpdateViewfromModel()
     }
@@ -44,13 +44,12 @@ class ConcentrationViewController: UIViewController {
             let button = CardButtons[index]
             let card = game.cards[index]
             if card.isFaceup{
-                button.setTitle(emoji(for: card), for: UIControlState.normal)
-                button.backgroundColor = UIColor.white
+                button.setTitle(emoji(for: card), for: UIControl.State.normal)
+                button.backgroundColor = UIColor.white   
             } else {
-                button.setTitle("", for: UIControlState.normal)
+                button.setTitle("", for: UIControl.State.normal)
                 button.backgroundColor = card.ismatched ? UIColor.clear : UIColor.orange
             }
-            
         }
         
     }
@@ -84,11 +83,11 @@ class ConcentrationViewController: UIViewController {
     func putimage (_ button: UIButton, _ emoji : String) {
         flipcount += 1
         if  button.currentTitle == " " || button.currentTitle == nil {
-            button.setTitle(emoji, for: UIControlState.normal)
+            button.setTitle(emoji, for: UIControl.State.normal)
             button.backgroundColor = UIColor.white
         
         } else {
-            button.setTitle(" ", for: UIControlState.normal)
+            button.setTitle(" ", for: UIControl.State.normal)
             button.backgroundColor = UIColor.orange
         }
     }

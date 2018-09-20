@@ -14,6 +14,7 @@
 		2E998860209BA92A00F7F82C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E99885E209BA92A00F7F82C /* Main.storyboard */; };
 		2E998862209BA92B00F7F82C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E998861209BA92B00F7F82C /* Assets.xcassets */; };
 		2E998865209BA92B00F7F82C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E998863209BA92B00F7F82C /* LaunchScreen.storyboard */; };
+		2ED9C9F72153356B0038CD54 /* ThemeChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED9C9F62153356B0038CD54 /* ThemeChooserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2E998861209BA92B00F7F82C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E998864209BA92B00F7F82C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E998866209BA92B00F7F82C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ED9C9F62153356B0038CD54 /* ThemeChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChooserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				2E99886C209BA9AA00F7F82C /* Supporting files */,
 				2E99885C209BA92A00F7F82C /* ViewController.swift */,
 				2E99885E209BA92A00F7F82C /* Main.storyboard */,
+				2ED9C9F62153356B0038CD54 /* ThemeChooserViewController.swift */,
 				2E998866209BA92B00F7F82C /* Info.plist */,
 			);
 			path = ConcentrationCard;
@@ -110,6 +113,7 @@
 				TargetAttributes = {
 					2E998856209BA92A00F7F82C = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -152,6 +156,7 @@
 				2E99885D209BA92A00F7F82C /* ViewController.swift in Sources */,
 				2E99885B209BA92A00F7F82C /* AppDelegate.swift in Sources */,
 				2E24E15020A5EBE000A40A7E /* Concentration.swift in Sources */,
+				2ED9C9F72153356B0038CD54 /* ThemeChooserViewController.swift in Sources */,
 				2E24E15220A5ED0700A40A7E /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +310,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = selvst.ConcentrationCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -323,7 +328,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = selvst.ConcentrationCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
