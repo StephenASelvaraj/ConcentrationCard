@@ -32,7 +32,7 @@ class ConcentrationViewController: UIViewController {
        
     }
     
-    @IBAction func StartNewGame(_ sender: UIButton) {
+    @IBAction func StartNewGamexxx(_ sender: UIButton) {
         flipcount = 0
         emojichoices = ["⚽️","⚾️","🎾","🏸", "🏏","🏓","⛳️","🏈"]
         game = Concentration(numberofpairofCards: (CardButtons.count+1)/2 )
