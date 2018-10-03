@@ -16,21 +16,29 @@ class ThemeChooserViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    let themes = [
+        "Sports": "⚽️🏀🏈⚾️🎾🏐🏉🎱🏓⛷🎳⛳️",
+        "Animals": "🐶🦆🐹🐸🐘🦍🐓🐩🐦🦋🐙🐏",
+        "Faces": "😀😌😎🤓😠😤😭😰😱😳😜😇"
+    ]
+    
 
-    @IBAction func SportsTheme(_ sender: UIButton) {
-        performSegue(withIdentifier: "GoToGame", sender: self)
-        
+
+    
+    @IBAction func chooseTheme(_ sender: Any) {
+        performSegue(withIdentifier: "GoToGame", sender: sender as! UIButton)
     }
     
-    @IBAction func FaceTheme(_ sender: UIButton) {
-        performSegue(withIdentifier: "GoToGame", sender: self)
-    }
-    
-    @IBAction func FoodDrink(_ sender: UIButton) {
-        performSegue(withIdentifier: "GoToGame", sender: self)
-    }
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
+        if let cvc = segue.destination as? ConcentrationViewController {
+    
+            if let themeName = (sender as? UIButton)?.currentTitle, let theme = themes[themeName]
+            {
+                cvc.emojichoices = theme
+            }
+        }
+        }
+    
 }
