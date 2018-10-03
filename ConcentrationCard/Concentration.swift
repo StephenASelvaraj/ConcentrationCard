@@ -20,7 +20,7 @@ class Concentration {
         if !cards[index].ismatched {
             if let matchindex = indexOfOneandOnlyCardFaceup , matchindex != index {
                 //check if cards match
-                if cards[matchindex].identifier == cards[index].identifier {
+                if cards[matchindex] == cards[index] {
                     cards[matchindex].ismatched = true
                     cards[index].ismatched = true
                 }

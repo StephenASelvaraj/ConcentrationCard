@@ -34,7 +34,7 @@ class ConcentrationViewController: UIViewController {
     
     @IBAction func StartNewGamexxx(_ sender: UIButton) {
         flipcount = 0
-        emojichoices = ["⚽️","⚾️","🎾","🏸", "🏏","🏓","⛳️","🏈"]
+        //emojichoices = ["⚽️⚾️🎾🏸", "🏏","🏓","⛳️","🏈"]
         game = Concentration(numberofpairofCards: (CardButtons.count+1)/2 )
         UpdateViewfromModel()
     }
@@ -54,18 +54,19 @@ class ConcentrationViewController: UIViewController {
         
     }
     
-    var emojichoices = ["🎃","🍕","🍎","🌮", "🦀","🐧","🐅","🐷"]
+    var emojichoices = "🎃🍕🍎🌮🦀🐧🐅🤣🐒🦋🐷"
     
     
     // Dictionary - integer pointing to a string
-    var emoji  = [Int:String]()
+    var emoji  = [Card :String]()
     
     func emoji(for card:Card) -> String {
-        if emoji[card.identifier] == nil, emojichoices.count > 0 {
-            let randomindex = Int(arc4random_uniform(UInt32(emojichoices.count)))
-            emoji[card.identifier] = emojichoices.remove(at: randomindex)
+        if emoji[card] == nil, emojichoices.count > 0 {
+            //let randomindex = Int(arc4random_uniform(UInt32(emojichoices.count)))
+            let stringIndex = emojichoices.index(emojichoices.startIndex, offsetBy: emojichoices.count.arc4Random)
+            emoji[card] = String(emojichoices.remove(at: stringIndex ))
         }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
     }
     
     
@@ -93,5 +94,19 @@ class ConcentrationViewController: UIViewController {
     }
     
     
+}
+
+extension Int {
+    var arc4Random: Int {
+        switch self {
+        case 1...Int.max:
+            return Int(arc4random_uniform(UInt32(self)))
+        case -Int.max..<0:
+            return Int(arc4random_uniform(UInt32(self)))
+        default:
+            return 0
+        }
+        
+    }
 }
 
